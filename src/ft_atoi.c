@@ -1,29 +1,29 @@
 #include <stddef.h>
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-    int x;
-    int y;
+	int	d;
+	int	s;
 
-    x = 1;
-    y = 0;
+	d = 1;
+	s = 0;
 	while (*str == '\t' || *str == '\n' || *str == '\v'
 		|| *str == '\f' || *str == '\r' || *str == ' ')
-        str++;
-    if (*str == '-')
-    {
-        x = x * -1;
-        str++;
-    }
-    else if (*str == '+')
-        str++;
-
-	while (*str >= '0' && *str <= '9')
+			str++;
+	if (*str == '-')
 	{
-		y = (y * 10);
-		y = y + (*str - '0');
+		d = d * -1;
 		str++;
 	}
-
-    return (y * x);
+	else if (*str == '+')
+		str++;
+	if (*str == '-' || *str == '+')
+		return (0);
+	while (*str >= '0' && *str <= '9')
+	{
+		s = (s * 10);
+		s = s + (*str - '0');
+		str++;
+	}
+	return (s * d);
 }
