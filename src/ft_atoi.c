@@ -1,5 +1,4 @@
-#include <stddef.h>
-
+#include <stdio.h>
 int	ft_atoi(const char *str)
 {
 	int	d;
@@ -26,4 +25,10 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	return (s * d);
+}
+
+int main()
+{
+	int x = ft_atoi("   -12345");
+	printf("%d\n", x);
 }
